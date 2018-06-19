@@ -1,0 +1,10 @@
+public int countEvens(int[] nums) {
+  int iCount = 0;
+  
+  for (int n = 0; n < nums.length; n++) {
+    if (nums[n] % 2 == 0) {
+      iCount++;
+    }
+  }
+  return iCount;
+}
