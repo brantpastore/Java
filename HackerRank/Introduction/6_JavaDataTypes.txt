@@ -1,0 +1,57 @@
+import java.util.*;
+import java.io.*;
+
+
+
+class Solution{
+    public static void main(String []argh)
+    {
+
+
+
+        Scanner sc = new Scanner(System.in);
+        int t=sc.nextInt();
+
+        for(int i=0;i<t;i++)
+        {
+
+            try
+            {
+                long x=sc.nextLong();
+                StringBuffer str = new StringBuffer("");
+                str.append(x);
+                str.append(" can be fitted in:\n");
+                
+                //A byte is an 8-bit signed integer.
+                if(x >= -128 && x <= 127) {
+                    System.out.println("* byte\n");
+                }
+                
+                //A short is a 16-bit signed integer.
+                if(x >= -32786 && x <= 32767) {
+                    str.append("* short\n");
+                }
+                
+                //An int is a 32-bit signed integer.
+                 if(x >= -2147483648 && x <= 2147483647) {
+                    str.append("* int\n");
+                }
+                
+                //A long is a 64-bit signed integer.
+                if(x >= -9223372036854775808 && x <= 9223372036854775807) {
+                    str.append("* long\n");
+                }              
+                
+                System.out.println(str);
+            }
+            catch(Exception e)
+            {
+                System.out.println(sc.next()+" can't be fitted anywhere.\n");
+            }
+
+        }
+    }
+}
+
+
+

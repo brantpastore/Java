@@ -1,0 +1,21 @@
+    /*
+     * Complete the findNumber function below.
+     */
+    static String findNumber(int[] arr, int k) {
+        boolean isFound = false;
+        String sResult = "";
+        
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == k) {
+                isFound = true;
+            }
+        }
+        
+        if (isFound) {
+            sResult = "YES";
+        } else if (!isFound) {
+            sResult = "NO";
+        }
+        return sResult;
+    }
+
