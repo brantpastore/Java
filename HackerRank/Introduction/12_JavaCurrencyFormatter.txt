@@ -1,0 +1,36 @@
+import java.util.*;
+import java.text.*;
+
+public class Solution {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
+        StringBuilder sPayment = new StringBuilder("");
+        sPayment.append(Double.toString(payment));
+        StringBuilder snPayment = new StringBuilder(sPayment).insert(2, ",");
+        snPayment.setLength(sPayment.length() - 0);
+        
+        StringBuilder us = new StringBuilder("$");
+        us.append(snPayment);
+        
+        StringBuilder india = new StringBuilder("Rs.");
+        india.append(snPayment);
+        
+        StringBuilder china = new StringBuilder("￥");
+        china.append(snPayment);
+        
+        sPayment.replace(5, 5, ",");
+        sPayment.deleteCharAt(6);
+        sPayment.insert(2, " ");
+        sPayment.setLength(sPayment.length() - 1);
+        sPayment.insert(sPayment.length(), " €");
+        StringBuilder france = sPayment;
+
+        System.out.println("US: " + us);
+        System.out.println("India: " + india);
+        System.out.println("China: " + china);
+        System.out.println("France: " + france);
+    }
+}

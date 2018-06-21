@@ -28,25 +28,25 @@ class Solution{
                 }
                 
                 //A short is a 16-bit signed integer.
-                if(x >= -32786 && x <= 32767) {
+                if(x >= Short.MIN_VALUE && x <= Short.MAX_VALUE) {
                     str.append("* short\n");
                 }
                 
                 //An int is a 32-bit signed integer.
-                 if(x >= -2147483648 && x <= 2147483647) {
+                 if(x >= Integer.MIN_VALUE && x <= Integer.MAX_VALUE) {
                     str.append("* int\n");
                 }
                 
                 //A long is a 64-bit signed integer.
-                if(x >= -9223372036854775808 && x <= 9223372036854775807) {
-                    str.append("* long\n");
+                if(x >= Long.MIN_VALUE && x <= Long.MAX_VALUE) {
+                    str.append("* long");
                 }              
                 
                 System.out.println(str);
             }
             catch(Exception e)
             {
-                System.out.println(sc.next()+" can't be fitted anywhere.\n");
+                System.out.println(sc.next()+" can't be fitted anywhere.");
             }
 
         }
