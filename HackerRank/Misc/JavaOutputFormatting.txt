@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int numPadding = 15;
+        System.out.println("================================");
+        for(int i=0;i<3;i++){
+            String s1=sc.next();
+            int x=sc.nextInt();
+            String nPad = new String("");
+            String nNum = new String(Integer.toString(x)); 
+            
+            int length = 15;
+            length -= s1.length();
+            for (int n = 0; n < length; n++) {
+                nPad += " ";
+            }
+            if (nNum.length() == 1) {
+                System.out.printf("%s %s 00%s\n", s1, nPad, nNum);
+            } else if (nNum.length() == 2) {
+                System.out.printf("%s %s 0%s\n", s1, nPad, nNum);
+            } else {
+                System.out.printf("%s %s %s\n", s1, nPad, nNum);
+            }
+        }
+        System.out.println("================================");
+
+    }
+}
+
+
+
