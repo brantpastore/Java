@@ -1,0 +1,14 @@
+public String makeTags(String tag, String word) {
+  String[] tagArr = {"<i>", "</i>", "<cite>", "</cite>", "<address>", "</address>", "<body>", "</body>"};
+  
+  if (tag.equals("i")) {
+    return tagArr[0] + word + tagArr[1];
+  } else if (tag.equals("cite")) {
+    return tagArr[2] + word + tagArr[3];
+  } else if (tag.equals("address")) {
+    return tagArr[4] + word + tagArr[5];
+  } else if (tag.equals("body")) {
+    return tagArr[6] + word + tagArr[7];
+  }
+  return "";
+}
