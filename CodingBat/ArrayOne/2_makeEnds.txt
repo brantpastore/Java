@@ -1,0 +1,7 @@
+public int[] makeEnds(int[] nums) {
+  int[] nArr = {0, 0};
+  
+  nArr[0] = nums[0];
+  nArr[1] = nums[nums.length-1];
+  return nArr;
+}

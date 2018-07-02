@@ -1,0 +1,10 @@
+public int[] makeLast(int[] nums) {
+  int[] nArr = new int[2*nums.length];
+
+  for (int pad = 0; pad <= nArr.length; pad++) {
+    nArr[0] = 0;
+  }
+  
+  nArr[nArr.length-1] = nums[nums.length-1];
+  return nArr;
+}
