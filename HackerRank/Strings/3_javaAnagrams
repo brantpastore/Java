@@ -1,0 +1,21 @@
+    static boolean isAnagram(String a, String b) {
+        String nA = a.toLowerCase();
+        String nB = b.toLowerCase();
+        
+        if (nA.length() > nB.length() || nB.length() > nA.length())
+            return false;
+        
+        int iLength = 0;
+        int blength = nB.length()-1;
+        for (int pos = 0; pos < a.length(); pos++) {
+            if (nA.charAt(pos) == nB.charAt(blength-pos)) {
+                iLength++;
+                if(iLength == nA.length()) {
+                    return true;
+                }
+            }
+            else return false;
+        }
+        
+        return false;
+    }

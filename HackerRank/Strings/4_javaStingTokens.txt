@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        
+        String[] tokenLen = s.trim().split("[ !,?\\._'@]+",0);
+            
+        System.out.println(tokenLen.length);
+        for (String token : tokenLen) {
+            System.out.println(token);
+        }
+    
+        scan.close();
+    }
+}
+
