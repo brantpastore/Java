@@ -1,4 +1,4 @@
-import java.util.*;
+﻿/*import java.util.*;
 import java.text.*;
 
 public class Solution {
@@ -28,6 +28,40 @@ public class Solution {
         sPayment.insert(sPayment.length(), " €");
         StringBuilder france = sPayment;
 
+        System.out.println("US: " + us);
+        System.out.println("India: " + india);
+        System.out.println("China: " + china);
+        System.out.println("France: " + france);
+    }
+}*/
+
+import java.util.*;
+import java.text.*;
+
+public class Solution {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
+               
+        String us, india, china, france;
+        NumberFormat[] currencyFormat = new NumberFormat[4];
+        Locale in = new Locale("en", "in");
+        Locale[] list = { Locale.US, in, Locale.CHINA, Locale.FRANCE };
+        
+        NumberFormat nf = NumberFormat.getInstance();
+        nf.format(payment);
+        
+        for (int i = 0; i < list.length; i++) {
+            currencyFormat[i] = nf.getCurrencyInstance(list[i]);
+        }
+        
+        us =  currencyFormat[0].format(payment);
+        india = currencyFormat[1].format(payment);
+        china = currencyFormat[2].format(payment);
+        france = currencyFormat[3].format(payment);
+        
         System.out.println("US: " + us);
         System.out.println("India: " + india);
         System.out.println("China: " + china);
