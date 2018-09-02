@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        BigInteger biOne = new BigInteger(scan.nextLine());
+        BigInteger biTwo = new BigInteger(scan.nextLine());
+        BigInteger sum = BigInteger.valueOf(0);
+        BigInteger product = BigInteger.valueOf(0);
+        
+        sum = sum.add(biOne);
+        sum = sum.add(biTwo);
+        product = biOne.multiply(biTwo);
+        
+        System.out.println(sum);
+        System.out.println(product);
+    }
+}
