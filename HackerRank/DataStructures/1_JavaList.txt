@@ -1,0 +1,57 @@
+package learnprogramming;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+import java.io.*;
+import java.util.*;
+
+    public class Solution {
+        public static boolean flag;
+        public static String line = "";
+        public static int numOfElements = 0;
+        public static String nextLine = "";
+        public static int element = 0;
+        public static Scanner scan;
+
+        public static ArrayList<Integer> nList = new ArrayList<Integer>();
+
+        public static void main(String[] args) {
+            scan = new Scanner(System.in);
+            numOfElements = scan.nextInt();
+            scan.nextLine();
+            for (int index = 0; index < numOfElements; index++) {
+                nList.add(scan.nextInt());
+            }
+
+            int Queries = scan.nextInt();
+            scan.nextLine();
+            while (Queries > 0) {
+                String currentLine = scan.nextLine();
+                if (currentLine.equals("Insert")) {
+                    insert();
+                    currentLine = scan.nextLine();
+                } else if (currentLine.equals("Delete")) {
+                    remove();
+                }
+                Queries--;
+            }
+
+            //System.out.println(nList);
+            for (Integer i : nList) {
+                System.out.print(i + " ");
+            }
+        }
+
+        public static void insert() {
+            int index = scan.nextInt();
+            element = scan.nextInt();
+            nList.add(index, element);
+        }
+
+        public static void remove() {
+            element = scan.nextInt();
+            nList.remove(element);
+        }
+    }
