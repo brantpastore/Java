@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.security.NoSuchAlgorithmException;
+import java.security.MessageDigest;
+
+import javax.xml.bind.DatatypeConverter;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        String regex = "[a-zA-Z0-9]";
+        Pattern p = Pattern.compile(regex);
+        String password = scan.nextLine();
+
+        Matcher m = p.matcher(password);
+        boolean Passes = m.matches();
+        
+        try {
+            if (password.length() >= 6 && password.length() <= 20) {
+                if (Passes) { // String  consists of English alphabetic letters (i.e. a-zA-Z,  and/or decimal digits (i.e. 0-9,  through ) only.
+                    String hash = DatatypeConverter.printHexBinary(MessageDigest.getInstance("MD5").digest(password.getBytes("UTF-8")));
+                    System.out.println(hash.toLowerCase());
+                }
+            }
+        } catch (NoSuchAlgorithmException e) {
+            System.out.println(e.getMessage());
+        } catch (UnsupportedEncodingException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
