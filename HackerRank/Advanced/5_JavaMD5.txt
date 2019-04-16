@@ -1,4 +1,4 @@
-import java.io.*;
+/*import java.io.*;
 import java.util.*;
 import java.text.*;
 import java.math.*;
@@ -33,4 +33,45 @@ public class Solution {
             System.out.println(e.getMessage());
         }
     }
+}*/
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+public class Solution {
+
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        Scanner scan = new Scanner(System.in);
+        String valToHash = scan.nextLine();
+        String hash = "";
+
+        if (valToHash != null && !valToHash.isEmpty()) {
+            hash = toMD5(valToHash);
+        } else {
+            // Empty or null
+        }
+        System.out.println(hash);
+    }
+
+    public static String toMD5(String input) throws UnsupportedEncodingException {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] inputData = input.getBytes("UTF-8");
+            md.update(inputData, 0, input.length());
+
+            String hash = new BigInteger(1, md.digest()).toString(16);
+            return hash;
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
 }
+
